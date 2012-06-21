@@ -9,9 +9,8 @@ class Subprocess(object):
     Enables to run subprocess commands in a different thread
     with TIMEOUT option!
 
-    Based on https://gist.github.com/1306188 which is in turn
-    > Based on jcollado's solution:
-    > http://stackoverflow.com/questions/1191374/subprocess-with-timeout/4825933#4825933
+    Based on http://github.com/dimagi/dimagi-utils/blob/master/dimagi/utils/\
+    subprocess_timeout.py
     """
     def __init__(self, *args, **kwargs):
         self.args = args
@@ -23,7 +22,8 @@ class Subprocess(object):
             self.process = subprocess.Popen(*args, **kwargs)
             self.process.communicate()
 
-        thread = threading.Thread(target=target, args=self.args, kwargs=self.kwargs)
+        thread = threading.Thread(target=target, args=self.args,
+                kwargs=self.kwargs)
         thread.start()
 
         thread.join(timeout)

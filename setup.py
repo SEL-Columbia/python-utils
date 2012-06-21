@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
      name='modilabs-python-utils',
-     version='0.1.3',
+     version='0.1.5',
      author='modilabs',
      author_email='info@modilabs.org',
      packages=['modilabs', 'modilabs.utils'],
