@@ -1,16 +1,14 @@
-#!/usr/bin/env python
-from setuptools import setup, find_packages
-
+from distutils.core import setup
 
 setup(
-    name='python-utils',
-    version='0.0.2',
-    description='Modilabs Shared Python Utilities',
-    author='Modilabs',
-    author_email='info@modilabs.org',
-    url='http://modilabs.org/',
-    packages = find_packages(exclude=['*.pyc']),
-    install_requires = [
-        "python-dateutil"
-    ],
+     name='modilabs-python-utils',
+     version='0.1.2',
+     author='modilabs',
+     author_email='info@modilabs.org',
+     packages=['modilabs', 'modilabs.utils'],
+     scripts=[],
+     url='http://pypi.python.org/pypi/modilabs-python-utils/',
+     license='LICENSE.txt',
+     description='Collection of common Python utilities by Modi Group',
+     long_description=open('README.txt').read(),
 )
